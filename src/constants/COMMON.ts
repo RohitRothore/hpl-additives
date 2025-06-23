@@ -1,0 +1,1 @@
+export const CONTACT_NUMBER = "+91 129-2251300";

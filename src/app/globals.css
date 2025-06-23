@@ -1,26 +1,83 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@config "../../tailwind.config.ts";
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    @apply text-gray-700 text-sm lg:text-base scroll-smooth 
 }
+
+@layer components {
+    .no-scrollbar::-webkit-scrollbar {
+      @apply hidden;
+    }
+    .no-scrollbar-show::-webkit-scrollbar {
+      @apply block;
+    }
+    .divider {
+      @apply border-b border-gray-100;
+    }
+  }
+  
+  * {
+    -webkit-tap-highlight-color: rgba(black, 0);
+    :focus-visible,
+    :-webkit-any-link:focus-visible {
+      outline: 0;
+    }
+    &::-webkit-scrollbar {
+      @apply h-[6px] w-[6px];
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-[30px] bg-slate-200;
+    }
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  .overflow-hr-scroll {
+    margin-right: -1rem;
+    margin-left: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media (min-width: 768px) {
+      margin-right: 0;
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .slick-prev {
+      left: 20px !important;
+      transform: rotate(180deg);
+    }
+
+    .slick-next {
+      right: 20px !important;
+    }
+
+    .slick-prev,
+    .slick-next {
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.702) !important;
+      height: 4rem !important;
+      width: 4rem !important;
+      border-radius: 100% !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      .slick-prev,
+      .slick-next {
+        display: none !important;
+      }
+      
+    }

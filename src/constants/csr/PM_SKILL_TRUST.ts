@@ -1,0 +1,26 @@
+export const PM_SKILL_TRUST = {
+  slug: "prime-minister-skill-development",
+  title: "Prime Minister’s Skill Development",
+  text: [
+    "Prime Minister’s Skill Development: Under this initiative, the government aims to skill individuals on a large scale so as to achieve its vision of “Skilled India”.",
+    '<span class="text-theme font-semibold">HPL Initiative:</span> HPL has been a part of this initiative via contributions made through the DC of CE Palwal, by supporting village Nangla Bheku, and providing sewing machines, furniture, study materials, etc. for the vocational training of the people there.',
+  ],
+  gallery: [
+    { src: "/assets/images/csr/skill-csr/1.jpg", alt: "speciality chemicals india" },
+    { src: "/assets/images/csr/skill-csr/2.jpg", alt: "zbs" },
+    { src: "/assets/images/csr/skill-csr/3.jpg", alt: "specialty chemicals companies list" },
+    { src: "/assets/images/csr/skill-csr/4.jpg", alt: "specialty chemicals companies list" },
+    { src: "/assets/images/csr/skill-csr/5.jpg", alt: "chemical exporters" },
+    { src: "/assets/images/csr/skill-csr/6.jpg", alt: "chemical plants india" },
+    { src: "/assets/images/csr/skill-csr/7.jpg", alt: "eco packaging" },
+    { src: "/assets/images/csr/skill-csr/8.jpg", alt: "disposable packaging" },
+    { src: "/assets/images/csr/skill-csr/9.jpg", alt: "industrial chemical suppliers" },
+    { src: "/assets/images/csr/skill-csr/10.jpg", alt: "degradable carry bags" },
+    { src: "/assets/images/csr/skill-csr/11.jpg", alt: "disposable carry bags" },
+    { src: "/assets/images/csr/skill-csr/12.jpg", alt: "compostable carry bags" },
+    { src: "/assets/images/csr/skill-csr/13.jpg", alt: "polymerization catalyst" },
+    { src: "/assets/images/csr/skill-csr/14.jpg", alt: "chemical companies usa" },
+    { src: "/assets/images/csr/skill-csr/15.jpg", alt: "environmentally friendly plastic" },
+    { src: "/assets/images/csr/skill-csr/16.jpg", alt: "phenolic antioxidants" },
+  ],
+};
