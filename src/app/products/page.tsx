@@ -206,7 +206,7 @@ export default function Home() {
     <div className="bg-[#f0f5f8]">
       {/* Product Section */}
       <HeroSection />
-      <div className="container mx-auto py-10 px-4">
+      <div className="container py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           <Sidebar />
           <div className="col-span-2">

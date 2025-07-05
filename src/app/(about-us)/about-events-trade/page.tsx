@@ -56,7 +56,7 @@ const events = [
           "/assets/images/events/big10(1).jpg",
           "/assets/images/events/big12(1).jpg",
           "/assets/images/events/big13(1).jpg",
-          "/assets/images/events/big18(1).jpg",
+          "/assets/images/events/big18.jpg",
         ],
       },
       {
@@ -75,9 +75,9 @@ const events = [
           "/assets/images/events/big08(2).jpg",
           "/assets/images/events/big12(2).jpg",
           "/assets/images/events/big16(2).jpg",
-          "/assets/images/events/big21(2).jpg",
-          "/assets/images/events/big26(2).jpg",
-          "/assets/images/events/big28(2).jpg",
+          "/assets/images/events/big21.jpg",
+          "/assets/images/events/big26.jpg",
+          "/assets/images/events/big28.jpg",
         ],
       },
     ],
@@ -108,15 +108,15 @@ const events = [
         ],
         carouselImages: [
           "/assets/images/events/big01(3).jpg",
-          "/assets/images/events/big12(3).jpg",
-          "/assets/images/events/big134.jpg",
           "/assets/images/events/big144.jpg",
-          "/assets/images/events/big15(3).jpg",
+          "/assets/images/events/big16.jpg",
+          "/assets/images/events/big144.jpg",
+          "/assets/images/events/big15(1).jpg",
           "/assets/images/events/big16(3).jpg",
-          "/assets/images/events/big17(3).jpg",
-          "/assets/images/events/big18(3).jpg",
-          "/assets/images/events/big19(3).jpg",
-          "/assets/images/events/big20(3).jpg",
+          "/assets/images/events/big17.jpg",
+          "/assets/images/events/big18(1).jpg",
+          "/assets/images/events/big19.jpg",
+          "/assets/images/events/big20.jpg",
         ],
       },
       {
@@ -133,31 +133,31 @@ const events = [
           "/assets/images/events/big06(4).jpg",
           "/assets/images/events/big07(4).jpg",
           "/assets/images/events/big08(4).jpg",
-          "/assets/images/events/big10(4).jpg",
-          "/assets/images/events/big11(4).jpg",
-          "/assets/images/events/big14(4).jpg",
-          "/assets/images/events/big15(4).jpg",
-          "/assets/images/events/big16(4).jpg",
-          "/assets/images/events/big17(4).jpg",
-          "/assets/images/events/big18(4).jpg",
+          "/assets/images/events/big10(3).jpg",
+          "/assets/images/events/big11.jpg",
+          "/assets/images/events/big14(2).jpg",
+          "/assets/images/events/big15(1).jpg",
+          "/assets/images/events/big16(3).jpg",
+          "/assets/images/events/big17(1).jpg",
+          "/assets/images/events/big18(2).jpg",
         ],
       },
       {
         subtitle: "Dusseldorf, Germany (2010)",
         images: [
           "/assets/images/events/big03(5).jpg",
-          "/assets/images/events/big05(5).jpg",
+          "/assets/images/events/big05(3).jpg",
         ],
         carouselImages: [
-          "/assets/images/events/big01(5).jpg",
+          "/assets/images/events/big01(4).jpg",
           "/assets/images/events/big02(5).jpg",
           "/assets/images/events/big03(5).jpg",
           "/assets/images/events/big04(5).jpg",
-          "/assets/images/events/big05(5).jpg",
-          "/assets/images/events/big06(5).jpg",
+          "/assets/images/events/big05(3).jpg",
+          "/assets/images/events/big06(4).jpg",
           "/assets/images/events/big07(5).jpg",
-          "/assets/images/events/big08(5).jpg",
-          "/assets/images/events/big10(5).jpg",
+          "/assets/images/events/big08(4).jpg",
+          "/assets/images/events/big10(3).jpg",
         ],
       },
     ],
@@ -175,10 +175,16 @@ const carouselSettings = {
 
 export default function EventsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImages, setSelectedImages] = useState([]);
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [modalTitle, setModalTitle] = useState("");
 
-  const openModal = (images, title) => {
+  const openModal = ({
+    images,
+    title,
+  }: {
+    images: string[];
+    title: string;
+  }) => {
     setSelectedImages(images);
     setModalTitle(title);
     setIsModalOpen(true);
@@ -212,13 +218,19 @@ export default function EventsPage() {
               </h4>
             </div>
             {event.sections.map((section, sectionIndex) => (
-              <div key={sectionIndex} className="mt-8 border-b border-gray-300 pb-12">
+              <div
+                key={sectionIndex}
+                className="mt-8 border-b border-gray-300 pb-12"
+              >
                 <p className="text-xl mt-16 font-semibold">
                   {section.subtitle}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
                   {section.images.map((img, imgIndex) => (
-                    <div key={imgIndex} className="rounded-lg hover:scale-105 transition duration-300 overflow-hidden">
+                    <div
+                      key={imgIndex}
+                      className="rounded-lg hover:scale-105 transition duration-300 overflow-hidden"
+                    >
                       <Image
                         src={img}
                         alt={`${event.title} ${section.subtitle}`}
@@ -231,7 +243,10 @@ export default function EventsPage() {
                   <div
                     className="cursor-pointer rounded-lg overflow-hidden hover:scale-105 transition duration-300 size-full"
                     onClick={() =>
-                      openModal(section.carouselImages, section.subtitle)
+                      openModal({
+                        images: section.carouselImages,
+                        title: section.subtitle,
+                      })
                     }
                   >
                     <div className="size-full relative">
@@ -263,7 +278,7 @@ export default function EventsPage() {
       >
         <Carousel settings={carouselSettings}>
           {selectedImages.map((img, index) => (
-            <div key={index}>
+            <div key={index} className="max-h-[80vh]">
               <Image
                 src={img}
                 alt={`${modalTitle} image ${index + 1}`}

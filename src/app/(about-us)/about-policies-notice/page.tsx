@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Banner from "@/components/Banner";
 import Image from "next/image";
-import { X } from "feather-icons-react";
+import { File, X } from "feather-icons-react";
+import { downloadPDF } from "@/utils/downloadPDF";
+import { isMobile } from "@/constants/COMMON";
 
 // Constant for policy data
 const policies = [
@@ -123,11 +125,19 @@ export default function PoliciesPage() {
     setSelectedPdf("");
   };
 
+  const handleViewPdf = (pdfUrl: string) => {
+    if (isMobile) {
+      downloadPDF(pdfUrl);
+    } else {
+      openModal(pdfUrl);
+    }
+  };
+
   return (
     <main className="bg-gray-100 pb-8 lg:pb-16">
       <Banner title="Policies" />
       <div className="container">
-        <div className="rounded-lg mt-8 lg:mt-16 bg-white p-8">
+        <div className="rounded-lg mt-8 lg:mt-16 bg-white p-4 lg:p-8">
           <div className="max-w-96 lg:max-w-3xl mx-auto mb-8">
             <Image
               src="/assets/images/policies/index.jpg"
@@ -143,19 +153,19 @@ export default function PoliciesPage() {
                 key={policy.number}
                 className="flex items-center border-b shadow border-gray-200 p-4 rounded-lg hover:scale-105 transition-transform duration-300"
               >
-                <span className="w-8 font-medium text-gray-600">
+                <span className="font-medium mr-2 text-gray-600">
                   {policy.number}.
                 </span>
-                <div className="flex justify-between items-center w-full">
+                <div className="flex justify-between gap-2 items-center w-full">
                   <span className="font-medium text-gray-800">
                     {policy.title}
                   </span>
                   <button
-                    onClick={() => openModal(policy.href)}
-                    className="flex items-center gap-2 text-theme hover:cursor-pointer"
+                    onClick={() => handleViewPdf(policy.href)}
+                    className="flex items-center gap-1 text-theme hover:cursor-pointer"
                   >
                     Read
-                    <i className="bi bi-file-earmark-text text-lg"></i>
+                    <File size={13} />
                   </button>
                 </div>
               </div>

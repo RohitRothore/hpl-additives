@@ -3,13 +3,13 @@ import { notFound } from "next/navigation";
 import { csrProgramDetail } from "@/constants/csr/CSR_LIST";
 import Gallery from "@/page/csr/Gallery";
 
-export default function CsrDetailPage({
-  params,
-}: {
-  params: { csrDetail: string };
-}) {
-  const csr =
-    csrProgramDetail[params.csrDetail as keyof typeof csrProgramDetail];
+interface PageProps {
+  params: Promise<{ csrDetail: string }>;
+}
+
+export default async function CsrDetailPage({ params }: PageProps) {
+  const { csrDetail } = await params;
+  const csr = csrProgramDetail[csrDetail as keyof typeof csrProgramDetail];
   if (!csr) {
     notFound();
   }

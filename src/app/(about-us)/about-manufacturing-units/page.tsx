@@ -62,7 +62,8 @@ export default function ManufacturingUnitsPage() {
   return (
     <main className="bg-gray-100 pb-8 lg:pb-16">
       <Banner title="Manufacturing Units" />
-      <div className="container bg-white py-8 mt-8 lg:mt-16 rounded-xl">
+     <div className="container">
+       <div className="container bg-white py-8 mt-8 lg:mt-16 rounded-xl">
         <p className="max-w-2xl text-center font-medium mb-12 text-lg lg:text-xl mx-auto">
           HPL Additives has four manufacturing sites in India - 3 in Faridabad
           (Haryana) and 1 in Derabassi (Punjab).
@@ -104,6 +105,7 @@ export default function ManufacturingUnitsPage() {
           ))}
         </div>
       </div>
+     </div>
     </main>
   );
 }

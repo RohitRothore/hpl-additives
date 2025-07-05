@@ -64,8 +64,8 @@ export default function SustainableDevelopmentPage() {
   return (
     <main className="bg-gray-100 pb-8 lg:pb-16">
       <Banner title="Sustainable Development" />
-      <div className="container bg-white pt-8 pb-12 mt-8 lg:mt-16 rounded-xl">
-        <section>
+      <div className="container">
+        <section className="bg-white pt-8 pb-12 mt-8 lg:mt-16 rounded-xl px-4 lg:px-8">
           <p className="max-w-2xl text-center font-medium mb-12 text-lg lg:text-xl mx-auto">
             HPL Additives stands committed to its responsibility towards
             society.

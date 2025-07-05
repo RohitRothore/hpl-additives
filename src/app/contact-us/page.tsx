@@ -1,6 +1,5 @@
 import Banner from "@/components/Banner";
 import ContactForm from "@/page/contactUs/form";
-import Icon from "feather-icons-react";
 import Link from "next/link";
 
 // Constant for office data

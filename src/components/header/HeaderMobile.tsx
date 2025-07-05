@@ -26,6 +26,7 @@ function HeaderMobile() {
 
   useEffect(() => {
     handleSidebarClose();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (

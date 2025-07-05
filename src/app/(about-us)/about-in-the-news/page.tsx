@@ -4,6 +4,8 @@ import Banner from "@/components/Banner";
 import Image from "next/image";
 import { useState } from "react";
 import { X } from "feather-icons-react";
+import { isMobile } from "@/constants/COMMON";
+import { downloadPDF } from "@/utils/downloadPDF";
 
 const newsItems = [
   {
@@ -91,6 +93,13 @@ export default function NewsPage() {
     setSelectedPdf(null);
     setIsModalOpen(false);
   };
+  const handleViewPdf = (pdfUrl: string) => {
+    if (isMobile) {
+      downloadPDF(pdfUrl);
+    } else {
+      openModal(pdfUrl);
+    }
+  };
 
   return (
     <main className="bg-gray-100">
@@ -104,7 +113,7 @@ export default function NewsPage() {
             >
               {news.pdf ? (
                 <button
-                  onClick={() => openModal(news.pdf)}
+                  onClick={() => handleViewPdf(news.pdf)}
                   className="flex flex-col hover:cursor-pointer gap-4 md:flex-row w-full text-left"
                 >
                   <Image

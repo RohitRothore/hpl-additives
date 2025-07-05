@@ -57,7 +57,7 @@ export default function GlobalPage() {
             <h3 className="text-2xl font-semibold text-theme mb-4">AMERICAS</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {distributorData.americas.map((distributor, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
                   <h4 className="text-xl font-semibold text-theme mb-2">
                     {distributor.country}
                   </h4>
@@ -75,7 +75,7 @@ export default function GlobalPage() {
             <h3 className="text-2xl font-semibold text-theme mb-4">EUROPE</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {distributorData.europe.map((distributor, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
                   <h4 className="text-xl font-semibold text-theme mb-2">
                     {distributor.country}
                   </h4>
@@ -95,7 +95,7 @@ export default function GlobalPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {distributorData.panEuropean.map((distributor, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
                   <h4 className="text-xl font-semibold text-theme mb-2">
                     {distributor.country}
                   </h4>
@@ -110,7 +110,7 @@ export default function GlobalPage() {
             <h3 className="text-2xl font-semibold text-theme mb-4">AFRICA</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {distributorData.africa.map((distributor, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
                   <h4 className="text-xl font-semibold text-theme mb-2">
                     {distributor.country}
                   </h4>

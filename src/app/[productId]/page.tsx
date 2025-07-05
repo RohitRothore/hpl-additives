@@ -1,14 +1,18 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import { notFound } from "next/navigation";
 import HeroSection from "@/page/product/HeroSection";
 import Sidebar from "@/page/product/Sidebar";
 import { productData } from "@/constants/product/PRODUCT_DETAIL";
 
-export default function ProductPage({
-  params,
-}: {
-  params: { productId: string };
-}) {
-  const product = productData[params.productId as keyof typeof productData];
+interface PageProps {
+  params: Promise<{ productId: string }>;
+}
+
+export default async function ProductPage({ params }: PageProps) {
+  const { productId } = await params;
+  const product = productData[productId as keyof typeof productData];
 
   if (!product) {
     notFound();
@@ -17,7 +21,7 @@ export default function ProductPage({
   return (
     <div className="bg-[#f0f5f8]">
       <HeroSection />
-      <div className="container mx-auto py-10 px-4">
+      <div className="container py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Sidebar />
           <div className="col-span-2">
