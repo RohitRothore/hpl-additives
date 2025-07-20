@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Banner from "@/components/Banner";
 import Image from "next/image";
-import { File, X } from "feather-icons-react";
 import { downloadPDF } from "@/utils/downloadPDF";
 import { isMobile } from "@/constants/COMMON";
+import { X } from "feather-icons-react";
 
 // Constant for policy data
 const policies = [
@@ -134,24 +133,56 @@ export default function PoliciesPage() {
   };
 
   return (
-    <main className="bg-gray-100 pb-8 lg:pb-16">
-      <Banner title="Policies" />
-      <div className="container">
-        <div className="rounded-lg mt-8 lg:mt-16 bg-white p-4 lg:p-8">
-          <div className="max-w-96 lg:max-w-3xl mx-auto mb-8">
+    <main>
+      <div className="relative">
+        <Image
+          src="/assets/images/about/policies/Banner.jpg"
+          alt="Banner Image"
+          className="w-full h-auto object-cover"
+          width={1920}
+          height={500}
+        />
+        <p className="absolute text-3xl px-4 lg:text-6xl text-white text-center w-full bottom-1/3 lg:bottom-1/2">
+          Policies
+        </p>
+      </div>
+      <div className="bg-gradient-to-tl lg:mt-8 pb-8 lg:pb-16 from-blue-200 to-transparent to-50%">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 py-8 lg:py-16">
             <Image
-              src="/assets/images/policies/index.jpg"
-              alt="Industrial facility"
-              width={400}
+              src="/assets/images/about/policies/Image 1.png"
+              alt="About Us"
+              width={800}
               height={600}
-              className="w-full h-auto rounded-lg"
+              className="w-full object-cover"
             />
+            <div className="space-y-6">
+              <div>
+                <p className="text-2xl font-medium text-gray-600 flex items-center gap-2">
+                  Our Policies
+                  <span className="w-28 h-1 ml-3 bg-theme" />
+                </p>
+                <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                  Smart Additives for Smarter Solutions
+                </h2>
+              </div>
+
+              <p className="text-gray-700 text-lg leading-relaxed">
+                At HPL Additives, we are committed to delivering world-class
+                chemical additives that enhance product performance across
+                industries. With a strong foundation in innovation, compliance,
+                and sustainability, our practices are governed by transparency
+                and trust. From quality management to ethical operations, every
+                step we take reflects our dedication to excellence and
+                environmental responsibility.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-x-20">
             {policies.map((policy) => (
               <div
                 key={policy.number}
-                className="flex items-center border-b shadow border-gray-200 p-4 rounded-lg hover:scale-105 transition-transform duration-300"
+                className="flex items-center border-b font-medium border-theme"
               >
                 <span className="font-medium mr-2 text-gray-600">
                   {policy.number}.
@@ -162,10 +193,9 @@ export default function PoliciesPage() {
                   </span>
                   <button
                     onClick={() => handleViewPdf(policy.href)}
-                    className="flex items-center gap-1 text-theme hover:cursor-pointer"
+                    className="flex items-center gap-1 bg-theme py-1 px-4 text-white text-lg font-semibold hover:cursor-pointer"
                   >
                     Read
-                    <File size={13} />
                   </button>
                 </div>
               </div>

@@ -1,5 +1,3 @@
-import Banner from "@/components/Banner";
-
 // Constant for regulatory compliance data
 const regulatoryData = {
   bannerTitle: "Regulatory Compliance",
@@ -8,7 +6,7 @@ const regulatoryData = {
       text: "HPL Additives stands committed to its responsibility towards society. Complies with all regulatory requirements both domestically and Internationally.",
       style: {
         fontFamily: "gothamMedium",
-        fontSize: "text-base",
+        fontSize: "!text-2xl !font-extrabold",
         color: "text-black",
       },
     },
@@ -150,110 +148,129 @@ const regulatoryData = {
 
 export default function RegulatoryCompliancePage() {
   return (
-    <main className="bg-gray-100 pb-8 lg:pb-16">
-      <Banner title={regulatoryData.bannerTitle} />
-     <div className="container">
-       <div className="bg-white p-4 lg:p-8 mt-8 rounded-xl lg:mt-16">
-        {regulatoryData.intro.map((item, index) => (
-          <p
-            key={index}
-            className={`text-justify font-medium lg:text-lg ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize}`}
-          >
-            {item.text}
+    <main className="bg-theme">
+      <div className="container py-8 lg:py-16 flex flex-col lg:flex-row justify-between gap-8">
+        <div className="max-w-2xl space-y-4">
+          <p className="text-xl text-white font-medium flex items-center gap-3">
+            Regulatory Affairs
+            <span className="h-1 w-28 bg-white inline-block" />
           </p>
-        ))}
-        {regulatoryData.headings.map((heading, index) => (
-          <h3 key={index} className="text-xl font-bold text-theme mt-6">
-            {heading}
-          </h3>
-        ))}
-        {regulatoryData.reachDetails.map((item, index) => (
-          <p
-            key={index}
-            className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
-          >
-            {item.text}
+          <p className="text-3xl md:text-5xl font-extrabold text-white">
+            Ensuring Compliance, Supporting Innovation
           </p>
-        ))}
-        {regulatoryData.commitment.map((item, index) => (
-          <p
-            key={index}
-            className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
-          >
-            {item.text}
-          </p>
-        ))}
-        {regulatoryData.regulatoryCell.map((item, index) => (
-          <p
-            key={index}
-            className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
-          >
-            {item.text}
-          </p>
-        ))}
-        <h3 className="text-xl font-bold text-theme mt-6">
-          {regulatoryData.representative.heading}
-        </h3>
-        {regulatoryData.representative.contact.map((line, index) => (
-          <p
-            key={index}
-            className={`text-justify ${regulatoryData.representative.style.color} ${regulatoryData.representative.style.fontFamily} ${regulatoryData.representative.style.fontSize} mt-1`}
-          >
-            {line}
-          </p>
-        ))}
-        <p className="font-medium mt-4">
-          HPL is already REACH registered for the following products:
-        </p>
-        {regulatoryData.registeredProducts.map((category, index) => (
-          <div key={index} className="mt-4">
-            <h3 className="text-xl font-bold text-theme">
-              {category.category}
-            </h3>
-            <div className="pl-4">
-              {category.items.map((item, idx) => (
-                <p key={idx} className="text-gray-600">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-        ))}
-        <p className="font-medium mt-4">
-          The following products have been REACH registered by our partners:
-        </p>
-        {regulatoryData.partnerRegisteredProducts.map((category, index) => (
-          <div key={index} className="mt-4">
-            <h3 className="text-xl font-bold text-theme">
-              {category.category}
-            </h3>
-            <div className="pl-4">
-              {category.items.map((item, idx) => (
-                <p key={idx} className="text-gray-600">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-        ))}
-        {regulatoryData.responsibleCare.map((item, index) => (
-          <p
-            key={index}
-            className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
-          >
-            {item.text}
-          </p>
-        ))}
-        <p className="font-medium mt-4">
-          {regulatoryData.contact.text}
-          <span
-            className={`${regulatoryData.contact.emailStyle.color} ${regulatoryData.contact.emailStyle.fontFamily} ${regulatoryData.contact.emailStyle.fontSize}`}
-          >
-            {regulatoryData.contact.email}
-          </span>
+        </div>
+        <p className="max-w-2xl text-white text-base">
+          At HPL Additives, our Regulatory Affairs team plays a pivotal role in
+          aligning our products with global regulatory standards. With deep
+          expertise and a proactive approach, we ensure that all our additives
+          meet the evolving environmental, health, and safety regulations across
+          regions. Our commitment to compliance not only assures product
+          integrity but also empowers our customers to innovate confidently in a
+          competitive marketplace.
         </p>
       </div>
-     </div>
+      <div className="bg-white py-8 lg:py-16">
+        <div className="container">
+          {regulatoryData.intro.map((item, index) => (
+            <p
+              key={index}
+              className={`text-justify font-medium lg:text-lg ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize}`}
+            >
+              {item.text}
+            </p>
+          ))}
+          {regulatoryData.headings.map((heading, index) => (
+            <h3 key={index} className="text-xl font-bold text-theme mt-6">
+              {heading}
+            </h3>
+          ))}
+          {regulatoryData.reachDetails.map((item, index) => (
+            <p
+              key={index}
+              className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
+            >
+              {item.text}
+            </p>
+          ))}
+          {regulatoryData.commitment.map((item, index) => (
+            <p
+              key={index}
+              className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
+            >
+              {item.text}
+            </p>
+          ))}
+          {regulatoryData.regulatoryCell.map((item, index) => (
+            <p
+              key={index}
+              className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
+            >
+              {item.text}
+            </p>
+          ))}
+          <h3 className="text-xl font-bold text-theme mt-6">
+            {regulatoryData.representative.heading}
+          </h3>
+          {regulatoryData.representative.contact.map((line, index) => (
+            <p
+              key={index}
+              className={`text-justify ${regulatoryData.representative.style.color} ${regulatoryData.representative.style.fontFamily} ${regulatoryData.representative.style.fontSize} mt-1`}
+            >
+              {line}
+            </p>
+          ))}
+          <p className="font-medium mt-4">
+            HPL is already REACH registered for the following products:
+          </p>
+          {regulatoryData.registeredProducts.map((category, index) => (
+            <div key={index} className="mt-4">
+              <h3 className="text-xl font-bold text-theme">
+                {category.category}
+              </h3>
+              <div className="pl-4">
+                {category.items.map((item, idx) => (
+                  <p key={idx} className="text-gray-600">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+          <p className="font-medium mt-4">
+            The following products have been REACH registered by our partners:
+          </p>
+          {regulatoryData.partnerRegisteredProducts.map((category, index) => (
+            <div key={index} className="mt-4">
+              <h3 className="text-xl font-bold text-theme">
+                {category.category}
+              </h3>
+              <div className="pl-4">
+                {category.items.map((item, idx) => (
+                  <p key={idx} className="text-gray-600">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+          {regulatoryData.responsibleCare.map((item, index) => (
+            <p
+              key={index}
+              className={`text-justify ${item.style.color} ${item.style.fontFamily} ${item.style.fontSize} mt-4`}
+            >
+              {item.text}
+            </p>
+          ))}
+          <p className="font-medium mt-4">
+            {regulatoryData.contact.text}
+            <span
+              className={`${regulatoryData.contact.emailStyle.color} ${regulatoryData.contact.emailStyle.fontFamily} ${regulatoryData.contact.emailStyle.fontSize}`}
+            >
+              {regulatoryData.contact.email}
+            </span>
+          </p>
+        </div>
+      </div>
     </main>
   );
 }

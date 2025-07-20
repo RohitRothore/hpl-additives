@@ -6,9 +6,13 @@ import Link from "next/link";
 const { heading, title, description, image, buttonText, buttonLink } =
   CSR_SECTION;
 
-export default function CSRSection() {
+interface CSRSectionProps {
+  className?: string;
+}
+
+export default function CSRSection({ className }: CSRSectionProps) {
   return (
-    <section className="container py-14 lg:py-24 space-y-12">
+    <section className={`container py-14 lg:py-24 space-y-12 ${className}`}>
       <div className="flex flex-col lg:flex-row justify-between gap-8">
         <div className="max-w-2xl space-y-4">
           <p className="text-2xl text-gray-600 font-medium flex items-center gap-3">
@@ -21,13 +25,15 @@ export default function CSRSection() {
         </div>
         <div className="max-w-2xl text-gray-700 text-lg leading-relaxed">
           <p className="text-base">{description}</p>
-          <Link
-            href={buttonLink}
-            className="mt-4 inline-flex items-center gap-2 bg-theme px-6 py-3 text-white rounded-full font-semibold hover:opacity-90 transition"
-          >
-            {buttonText}
-            <ArrowRight size={20} />
-          </Link>
+          {!className && (
+            <Link
+              href={buttonLink}
+              className="mt-4 inline-flex items-center gap-2 bg-theme px-6 py-3 text-white rounded-full font-semibold hover:opacity-90 transition"
+            >
+              {buttonText}
+              <ArrowRight size={20} />
+            </Link>
+          )}
         </div>
       </div>
 

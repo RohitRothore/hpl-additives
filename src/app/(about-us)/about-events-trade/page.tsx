@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Modal } from "@/components/Modal";
 import { Carousel } from "@/components/Carousel";
+import SectionHeadline from "@/components/common/SectionHeadline";
 
 const events = [
   {
@@ -209,9 +210,15 @@ export default function EventsPage() {
           />
         </div>
       </section>
-      <div className="container py-12">
+      <SectionHeadline
+          description="At HPL Additives, our presence at global events and trade shows reflects our commitment to innovation, collaboration, and excellence These platforms allow us to engage with industry leaders, share breakthroughs, and build lasting relationships that drive progress in the chemical and additive sectors"
+          heading="Our Events"
+          title="Showcasing Innovation, Strengthening Connections."
+          className="my-8 container lg:my-16"
+        />
+      <div className="container bg-gray-200 rounded mb-8 lg:mb-16 py-12">
         {events.map((event, index) => (
-          <div key={index} className="mb-16">
+          <div key={index}>
             <div className="plastheading text-center">
               <h4 className="text-2xl lg:text-4xl text-theme font-bold">
                 {event.title}

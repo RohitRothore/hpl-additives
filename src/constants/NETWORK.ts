@@ -18,12 +18,6 @@ export const distributorData = {
   ],
   europe: [
     {
-      country:
-        "ALBANIA, BOSNIA, CROATIA, MACEDONIA, MONTENEGRO, SERBIA (+KOSOVO), SLOVENIA",
-      distributor: "Safic-Alcan Adriatic doo Beograd",
-      products: "Blowing Agents & Antioxidants",
-    },
-    {
       country: "GERMANY",
       distributor: "Safic-Alcan Deutschland GmbH",
       products: "Antioxidants",
@@ -59,18 +53,8 @@ export const distributorData = {
       products: "Blowing Agents & Antioxidants",
     },
     {
-      country: "NORDICS (SWEDEN, NORWAY, DENMARK, FINLAND, ICELAND)",
-      distributor: "Safic-Alcan UK Limited",
-      products: "Blowing Agents & Antioxidants",
-    },
-    {
       country: "BULGARIA",
       distributor: "Safic-Alcan Chimsnab",
-      products: "Blowing Agents & Antioxidants",
-    },
-    {
-      country: "CZECH REPUBLIC, HUNGARY & SLOVAKIA",
-      distributor: "Safic-Alcan Cesko, s. r. o.",
       products: "Blowing Agents & Antioxidants",
     },
     {
