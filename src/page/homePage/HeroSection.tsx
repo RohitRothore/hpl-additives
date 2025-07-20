@@ -52,7 +52,7 @@ export default function HeroSection() {
   return (
     <Carousel settings={HERO_SETTINGS}>
       {HERO_SLIDES.map(({ title, image }) => (
-        <div key={image} className="relative h-[60dvh]">
+        <div key={image} className="relative h-[60dvh] ">
           <Image
             src={image}
             alt={image}
